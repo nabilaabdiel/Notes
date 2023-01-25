@@ -1,125 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".login.LoginActivity">
-
-    <ImageView
-        android:id="@+id/shape"
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/background" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.login.LoginActivity">
 
-    <TextView
-        android:id="@+id/tv_my_notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="55dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="My Notes"
-        android:textColor="@color/white"
-        android:textSize="26sp" />
+        <ImageView
+            android:id="@+id/shape"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/background" />
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_my_notes"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppinsregular"
-        android:gravity="top"
-        android:text="Please login with your email and password"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_my_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="My Notes"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
 
-    <TextView
-        android:id="@+id/tvl_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="275dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Email"
-        android:textColor="@color/blues"
-        android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_my_notes"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="top"
+            android:text="Please login with your email and password"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
 
-    <EditText
-        android:id="@+id/etl_email"
-        android:layout_width="312dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="305dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/custom_bg"
-        android:fontFamily="@font/poppinsregular"
-        android:hint="Enter your email ..."
-        android:inputType="textEmailAddress"
-        android:padding="12dp"
-        android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tvl_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="275dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Email"
+            android:textColor="@color/blues"
+            android:textSize="13sp" />
 
-    <TextView
-        android:id="@+id/tvl_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etl_email"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="23dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Password"
-        android:textColor="@color/blues"
-        android:textSize="13sp" />
+        <EditText
+            android:id="@+id/etl_email"
+            android:layout_width="312dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="305dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/custom_bg"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="Enter your email ..."
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textSize="15sp" />
 
-    <EditText
-        android:id="@+id/etl_password"
-        android:layout_width="312dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="410dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/custom_bg"
-        android:fontFamily="@font/poppinsregular"
-        android:hint="Enter your password ..."
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tvl_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etl_email"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Password"
+            android:textColor="@color/blues"
+            android:textSize="13sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login"
-        android:layout_width="312dp"
-        android:layout_height="53dp"
-        android:layout_below="@id/etl_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:textColor="@color/white"
-        android:background="@drawable/custom_bg1"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Login"
-        android:textAllCaps="false" />
+        <EditText
+            android:id="@+id/etl_password"
+            android:layout_width="312dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/custom_bg"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="Enter your password ..."
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textSize="15sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_register"
-        android:layout_width="312dp"
-        android:layout_height="53dp"
-        android:layout_below="@id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/custom_bg2"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="@color/grey" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="312dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/etl_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_bg1"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Login"
+            android:textAllCaps="false" />
 
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="312dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_bg2"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/grey" />
+
+    </RelativeLayout>
+</layout>

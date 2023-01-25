@@ -1,174 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".register.RegisterActivity">
+<layout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="5dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_back"/>
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinssemibold"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textColor="@color/black"
-            android:text="Register"
-            android:textSize="18sp"/>
-
-    </RelativeLayout>
-
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-66dp"
-        tools:layout_editor_absoluteY="-42dp">
+        tools:context=".ui.register.RegisterActivity">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/tv_name"
+            <ImageView
+                android:id="@+id/iv_back"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="116dp"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Name"
-                android:textColor="@color/blues"
-                android:textSize="13sp" />
-
-            <EditText
-                android:id="@+id/etr_name"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="@font/poppinsregular"
-                android:hint="Enter your name ..."
-                android:inputType="textPersonName"
-                android:padding="12dp"
-                android:textSize="15sp" />
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_back" />
 
             <TextView
-                android:id="@+id/tvr_email"
+                android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Email"
-                android:textColor="@color/blues"
-                android:textSize="13sp" />
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Register"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/etr_email"
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="-66dp"
+            tools:layout_editor_absoluteY="-42dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="@font/poppinsregular"
-                android:hint="Enter your email ..."
-                android:inputType="textEmailAddress"
-                android:padding="12dp"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tvr_password"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Password"
-                android:textColor="@color/blues"
-                android:textSize="13sp" />
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/etr_password"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="@font/poppinsregular"
-                android:hint="Enter your password ..."
-                android:inputType="textPassword"
-                android:padding="12dp"
-                android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tvr_confirm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Confirm Password"
-                android:textColor="@color/blues"
-                android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tvr_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Name"
+                    android:textColor="@color/blues"
+                    android:textSize="13sp" />
 
-            <EditText
-                android:id="@+id/etr_confirm"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="@font/poppinsregular"
-                android:hint="Confirm your password ..."
-                android:inputType="textEmailAddress"
-                android:padding="12dp"
-                android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/etr_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/custom_bg"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="Enter your name ..."
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_login"
-                android:layout_width="290dp"
-                android:layout_height="63dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="150dp"
-                android:background="@drawable/custom_bg1"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/tvr_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Email"
+                    android:textColor="@color/blues"
+                    android:textSize="13sp" />
 
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/etr_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/custom_bg"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="Enter your email ..."
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvr_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Password"
+                    android:textColor="@color/blues"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparant"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etr_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/custom_bg"
+                        android:fontFamily="@font/poppinsregular"
+                        android:hint="Enter your password ..."
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:textSize="15sp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvr_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Confirm Password"
+                    android:textColor="@color/blues"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparant"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etr_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/custom_bg"
+                        android:fontFamily="@font/poppinsregular"
+                        android:hint="Confirm your password ..."
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp"
+                        android:textSize="15sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="290dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="175dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/custom_bg1"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

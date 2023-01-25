@@ -1,12 +1,12 @@
-package com.example.mynote.add
+package com.example.mynote.ui.profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mynote.R
 
-class AddNoteActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_note)
+        setContentView(R.layout.activity_profile)
     }
 }
