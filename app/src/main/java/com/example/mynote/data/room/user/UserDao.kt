@@ -1,9 +1,9 @@
 package com.example.mynote.data.room.user
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import com.crocodic.core.data.CoreDao
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao: CoreDao <User> {
@@ -11,7 +11,7 @@ interface UserDao: CoreDao <User> {
     suspend fun deleteAll()
 
     @Query("SELECT * FROM User WHERE idRoom = 1")
-    fun getUser(): LiveData<User>
+    fun getUser(): Flow<User>
 
     @Query("SELECT EXISTS (SELECT 1 FROM User WHERE idRoom = 1)")
     suspend fun isLogin(): Boolean

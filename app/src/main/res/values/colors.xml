@@ -8,10 +8,13 @@
     <color name="primary">#00A89D</color>
     <color name="blues">#1767B3</color>
     <color name="grey">#717375</color>
+    <color name="dark_grey">#66666666</color>
+    <color name="dark_grey_2">#663E3E3E</color>
     <color name="green_light">#f1fffc</color>
     <color name="transparant">#00F1FFFC</color>
     <color name="black">#000000</color>
     <color name="light_grey">#EDEDED</color>
+    <color name="putih">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="red">#FF0000</color>
 

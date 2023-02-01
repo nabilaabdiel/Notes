@@ -8,100 +8,100 @@
         android:orientation="vertical"
         tools:context=".ui.profile.ProfileActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="Profile"
-            android:layout_marginStart="24dp"
-            android:textSize="18sp"
-            android:fontFamily="@font/poppinsmedium"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="35dp"-->
+<!--            android:text="Profile"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:textSize="18sp"-->
+<!--            android:fontFamily="@font/poppinsmedium"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.043"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="129dp"
-            android:src="@drawable/ic_person"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginTop="129dp"-->
+<!--            android:src="@drawable/ic_person"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
 
-        <TextView
-            android:id="@+id/tvp_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinsregular"
-            android:text="Crocodic Developer"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="216dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tvp_username"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/poppinsregular"-->
+<!--            android:text="Crocodic Developer"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:layout_marginTop="216dp"/>-->
 
-        <TextView
-            android:id="@+id/tvp_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="developer@crocodic.com"
-            android:textSize="12sp"
-            android:fontFamily="@font/poppinsregular"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="237dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tvp_email"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="developer@crocodic.com"-->
+<!--            android:textSize="12sp"-->
+<!--            android:fontFamily="@font/poppinsregular"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:layout_marginTop="237dp"/>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginHorizontal="24dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <TextView
-                android:id="@+id/tv_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Edit Profile"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsregular"
-                android:layout_marginTop="313dp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_profile"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Edit Profile"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"-->
+<!--                android:fontFamily="@font/poppinsregular"-->
+<!--                android:layout_marginTop="313dp"/>-->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_person"
-                android:layout_marginTop="313dp"
-                android:layout_toStartOf="@id/tv_profile"
-                android:layout_alignParentRight="true"/>
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_person"-->
+<!--                android:layout_marginTop="313dp"-->
+<!--                android:layout_toStartOf="@id/tv_profile"-->
+<!--                android:layout_alignParentRight="true"/>-->
 
-            <TextView
-                android:id="@+id/tv_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:textColor="@color/red"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsregular"
-                android:layout_marginTop="372dp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_logout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Logout"-->
+<!--                android:textColor="@color/red"-->
+<!--                android:textSize="14sp"-->
+<!--                android:fontFamily="@font/poppinsregular"-->
+<!--                android:layout_marginTop="372dp"/>-->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_logout"
-                android:layout_marginTop="376dp"
-                android:layout_toStartOf="@id/tv_logout"
-                android:layout_alignParentRight="true"/>
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_logout"-->
+<!--                android:layout_marginTop="376dp"-->
+<!--                android:layout_toStartOf="@id/tv_logout"-->
+<!--                android:layout_alignParentRight="true"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -132,7 +132,7 @@
             android:layout_gravity="end|bottom"
             android:backgroundTint="@color/primary"
             android:layout_marginBottom="46dp"
-            android:src="@drawable/ic_add"
+            android:src="@drawable/ic_round_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>

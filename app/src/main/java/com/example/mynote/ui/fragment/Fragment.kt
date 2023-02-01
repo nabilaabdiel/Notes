@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 open class Fragment<vb : ViewDataBinding>(@LayoutRes private val layoutRes: Int) :
         CoreFragment<vb>(layoutRes) {
-            protected val app: App by lazy { requireActivity().aplication as App }
+            protected val app: App by lazy { requireActivity().application as App }
 
     @Inject
     lateinit var gson: Gson

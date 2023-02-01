@@ -54,7 +54,7 @@ class DataModule {
             .addInterceptor {  chain ->
                 val original = chain.request()
                 val token = session.getString(Const.TOKEN.API_TOKEN)
-//                val egg = session.getString(Const.TOKEN.FCM_TOKEN).trim()
+                val egg = session.getString(Const.TOKEN.FCM_TOKEN).trim()
                 Timber.d("tokenAndRegid: $token & regId")
                 val requestBuilder = original.newBuilder()
                     .header("Authorization", token)

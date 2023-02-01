@@ -25,8 +25,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
 
-    @Inject
-    lateinit var session: CoreSession
+//    @Inject
+//    lateinit var session: CoreSession
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +47,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             val password = binding.etlPassword.textOf()
 
             viewModel.login(email, password)
+            Timber.d("Password: $password")
+
         }
 
         lifecycleScope.launch {

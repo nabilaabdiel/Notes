@@ -39,7 +39,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
                 return@setOnClickListener
             }
 
-            binding.ivBack.setOnClickListener{
+            binding.backRegister.setOnClickListener{
                 openActivity<LoginActivity>()
                 finish()
             }

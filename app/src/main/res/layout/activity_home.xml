@@ -1,82 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeActivity"
-        android:orientation="vertical">
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.home.HomeActivity">
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/fram_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="55dp"
-                android:layout_marginHorizontal="24dp"
-                android:background="@drawable/search_bg"
-                android:layoutDirection="rtl"
-                android:queryHint="Search"/>
-
-        </LinearLayout>
-
-        <ScrollView
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/btm_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="129dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="16dp"
-                tools:listitem="@layout/list_item"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        </ScrollView>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            android:backgroundTint="@color/white"
+            android:layout_gravity="bottom|center"
+            app:fabCradleRoundedCornerRadius="@dimen/_10sdp"
+            app:fabCradleMargin="@dimen/_10sdp"
+            app:hideOnScroll="true">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
+                android:id="@+id/navigation"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|center"
+                android:backgroundTint="@color/transparant"
+                app:itemIconTint="@drawable/state_selector"
+                app:itemTextColor="@drawable/state_selector"
                 app:menu="@menu/btm_menu">
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
+            android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/primary"
-            android:layout_marginBottom="46dp"
-            android:src="@drawable/ic_add"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:focusable="true"
+            android:clickable="true"
+            android:tint="@color/white"
+            app:fabCustomSize="64dp"
+            android:src="@drawable/ic_round_add"
+            app:maxImageSize="@dimen/_25sdp"
+            app:layout_anchor="@id/btm_bar"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>
