@@ -1,10 +1,8 @@
 package com.example.mynote.api
 
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.PATCH
-import retrofit2.http.POST
+import okhttp3.MultipartBody
+import retrofit2.http.*
+
 interface ApiService {
 
     @FormUrlEncoded
@@ -25,15 +23,21 @@ interface ApiService {
 
     @FormUrlEncoded
     @PATCH("user/profile")
-    suspend fun Profile(
-        @Field("name") name: String,
-        @Field("photo") photo: String?
+    suspend fun updateProfile(
+        @Field("name") name: String
+    ): String
+
+    @Multipart
+    @PATCH("user/profile")
+    suspend fun updateProfileImg(
+        @Part("name") name: String?,
+        @Part photo: MultipartBody.Part?
     ): String
 
     @FormUrlEncoded
     @POST("note")
     suspend fun createNote(
-        @Field("tittle") title: String,
+        @Field("title") title: String,
         @Field("content") content: String?
     ): String
 
@@ -42,6 +46,11 @@ interface ApiService {
     suspend fun updateNote(
         @Field("tittle") title: String,
         @Field("content") content: String?
+    ): String
+
+    @DELETE("note/{id}")
+    suspend fun deleteNote(
+        @Path("id") id: String
     ): String
 
     @GET("note/")

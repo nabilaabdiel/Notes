@@ -15,9 +15,17 @@ class AddNoteViewModel @Inject constructor(
     private val apiService: ApiService
 ) : BaseViewModel() {
 
-    fun createNote (tittle: String, content: String) = viewModelScope.launch {
+    fun createNote (title: String, content: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
-        ApiObserver({apiService.createNote(tittle, content)}, false, object : ApiObserver.ResponseListener{
+        ApiObserver({apiService.createNote(title, content)}, false, object : ApiObserver.ResponseListener{
+            override suspend fun onSuccess(response: JSONObject) {
+                _apiResponse.send(ApiResponse().responseSuccess())
+            }
+        })
+    }
+    fun deleteNote (id: String) = viewModelScope.launch {
+        _apiResponse.send(ApiResponse().responseLoading())
+        ApiObserver({apiService.deleteNote(id)}, false, object : ApiObserver.ResponseListener{
             override suspend fun onSuccess(response: JSONObject) {
                 _apiResponse.send(ApiResponse().responseSuccess())
             }

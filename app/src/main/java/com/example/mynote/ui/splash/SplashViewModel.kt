@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(): BaseViewModel() {
     fun splash(done: (Boolean) -> Unit) = viewModelScope.launch {
-        delay(3000)
+        delay(1500)
         done (true)
     }
 }

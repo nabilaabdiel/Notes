@@ -39,11 +39,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
                 return@setOnClickListener
             }
 
-            binding.backRegister.setOnClickListener{
-                openActivity<LoginActivity>()
-                finish()
-            }
-
             val name = binding.etrName.textOf()
             val email = binding.etrEmail.textOf()
             val password = binding.etrPassword.textOf()
@@ -63,17 +58,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
                                 openActivity<HomeActivity>()
                                 finish()
                             }
-//                            ApiStatus.ERROR -> {
-//                                disconnect(it)
-//                            }
-//                            ApiStatus.EXPIRED -> {
-//
-//                            }
                             else -> loadingDialog.setResponse(it.message ?:return@collect)
                         }
                     }
                 }
             }
+        }
+        binding.backRegister.setOnClickListener {
+            openActivity<LoginActivity>()
+            finish()
         }
     }
 }

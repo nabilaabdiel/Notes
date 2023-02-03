@@ -1,5 +1,6 @@
 package com.example.mynote.ui.home
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiCode
@@ -24,12 +25,20 @@ class HomeViewModel @Inject constructor(
 
         val dataNote = MutableLiveData<List<Tittle>>()
 
-    fun getNote() = viewModelScope.launch {
+    fun getNote(search: String?) = viewModelScope.launch {
+        Log.d("cek search", "isinyaa search: $search")
         ApiObserver({ apiService.getNote()}, false, object : ApiObserver.ResponseListener{
             override suspend fun onSuccess(response: JSONObject) {
-                val data =
-                    response.getJSONArray(ApiCode.DATA).toList<Tittle>(gson)
-                dataNote.postValue(data)
+                val data = response.getJSONArray(ApiCode.DATA).toList<Tittle>(gson)
+
+                //Search-end
+                if (search.isNullOrEmpty()) {
+                    dataNote.postValue(data)
+                } else {
+                    val dataFiltered = data.filter { it.tittle.contains(search, ignoreCase = true) }
+                    dataNote.postValue(dataFiltered)
+                }
+                //end
                 Timber.d("cek api ${data.size}")
             }
             override suspend fun onError(response: ApiResponse) {

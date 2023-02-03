@@ -29,7 +29,7 @@
                 android:src="@drawable/ic_back"/>
 
             <TextView
-                android:id="@+id/tv_register"
+                android:id="@+id/tv_edtprof"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
@@ -42,6 +42,7 @@
         </RelativeLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/edt_profile"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="107dp"
@@ -105,7 +106,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_prof_save"
                 android:layout_width="290dp"
                 android:layout_height="62dp"
                 android:layout_marginBottom="45dp"

@@ -56,7 +56,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                 launch {
                     viewModel.apiResponse.collect {
                         when (it.status) {
-                            ApiStatus.LOADING -> loadingDialog.show("Logging in...")
+                            ApiStatus.LOADING -> loadingDialog.show("Please wait ..")
                             ApiStatus.SUCCESS -> {
                                 loadingDialog.dismiss()
                                 openActivity<HomeActivity>()
@@ -74,7 +74,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         val tokenInit = "$dateNow|rahasia"
         val tokenEncrypt = tokenInit.base64encrypt()
         session.setValue(Const.TOKEN.API_TOKEN,tokenEncrypt)
-//        CoreSession(this).setValue(Const.TOKEN.API_TOKEN, tokenEncrypt)
         Timber.d("cek token : $tokenInit")
 
         lifecycleScope.launch {

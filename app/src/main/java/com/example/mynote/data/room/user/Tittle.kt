@@ -7,19 +7,19 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Tittle(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey()
     @Expose
-    @SerializedName("tittle")
-    val id : Int = 0,
+    @SerializedName("id")
+    val id : String = "0",
     @Expose
-    @SerializedName("tittle")
+    @SerializedName("title")
     val tittle: String,
-    @Expose
-    @SerializedName("date")
-    val date : String,
     @Expose
     @SerializedName("content")
     val content : String,
+    @Expose
+    @SerializedName("date")
+    val date : String,
     @Expose
     @SerializedName("id_room")
     val idRoom : String

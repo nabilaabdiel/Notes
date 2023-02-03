@@ -50,21 +50,15 @@ class ProfileFragment : Fragment<FragmentProfileBinding>(R.layout.fragment_profi
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 launch {
-                    viewmodel.getUser.collect {
-                        Log.d("user ${it.name}")
-//                        it?.let { data ->
-//                            binding?.user = data
-//
-//                            binding?.let { viewImage ->
-//                                Glide
-//                                    .with(requireContext())
-//                                    .load(it.photo)
-//                                    .placeholder(R.drawable.ic_person)
-//                                    .error(R.drawable.ic_outline_error_24)
-//                                    .apply(RequestOptions.centerInsideTransform())
-//                                    .into(viewImage.fgPerson)
-//                            }
-//                        }
+                    viewmodel.getUser.collect { user ->
+                        binding?.user = user
+                        Glide
+                            .with(requireContext())
+                            .load(user.photo)
+                            .placeholder(R.drawable.ic_person)
+                            .error(R.drawable.ic_outline_error_24)
+                            .apply(RequestOptions.centerInsideTransform())
+                            .into(binding?.fgPerson ?: return@collect)
                     }
                 }
             }

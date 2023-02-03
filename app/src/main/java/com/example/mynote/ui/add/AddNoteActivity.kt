@@ -8,6 +8,7 @@ import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.isEmptyRequired
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.textOf
+import com.crocodic.core.extension.tos
 import com.example.mynote.R
 import com.example.mynote.base.activity.BaseActivity
 import com.example.mynote.base.viewModel.BaseViewModel
@@ -18,20 +19,26 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class AddNoteActivity : BaseActivity<ActivityAddNoteBinding, AddNoteViewModel>(R.layout.activity_add_note) {
+class AddNoteActivity :
+    BaseActivity<ActivityAddNoteBinding, AddNoteViewModel>(R.layout.activity_add_note) {
+
+    private var id: String? = null
+    private var title: String? = null
+    private var content: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        id = intent.getStringExtra("id")
+        title = intent.getStringExtra("title")
+        content = intent.getStringExtra("content")
+
+        binding.etaddTittle.setText(title)
+        binding.etaddContent.setText(content)
 
         binding.ivAddBack.setOnClickListener {
             openActivity<HomeActivity>()
             finish()
-
-//            binding.ivAddBack.setOnClickListener {
-//            if (binding.etaddTittle.isEmptyRequired(R.string.label_must_fill) ||
-//                binding.etaddContent.isEmptyRequired(R.string.label_must_fill)
-//            ) {
-//                return@setOnClickListener
-//            }
 
             val tittle = binding.etaddTittle.textOf()
             val content = binding.etaddContent.textOf()
@@ -39,23 +46,40 @@ class AddNoteActivity : BaseActivity<ActivityAddNoteBinding, AddNoteViewModel>(R
             viewModel.createNote(tittle, content)
         }
 
-            lifecycleScope.launch {
-                repeatOnLifecycle(Lifecycle.State.STARTED) {
-                    launch {
-                        viewModel.apiResponse.collect {
-                            when (it.status) {
-                                ApiStatus.LOADING -> loadingDialog.show("saved")
-                                ApiStatus.SUCCESS -> {
-                                    loadingDialog.dismiss()
-                                    openActivity<HomeActivity>()
-                                    finish()
-                                }
-                                else -> loadingDialog.setResponse(it.message ?: return@collect)
+        binding.ivSave.setOnClickListener {
+            openActivity<HomeActivity>()
+            finish()
+
+            val tittle = binding.etaddTittle.textOf()
+            val content = binding.etaddContent.textOf()
+
+            viewModel.createNote(tittle, content)
+        }
+
+        binding.ivDelete.setOnClickListener {
+            if (id != null) {
+                viewModel.deleteNote(id!!)
+            } else {
+                tos("Tidak ada data")
+            }
+        }
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.apiResponse.collect {
+                        when (it.status) {
+                            ApiStatus.LOADING -> loadingDialog.show("saved")
+                            ApiStatus.SUCCESS -> {
+                                loadingDialog.dismiss()
+                                openActivity<HomeActivity>()
+                                finish()
                             }
+                            else -> loadingDialog.setResponse(it.message ?: return@collect)
                         }
                     }
                 }
             }
-//        }
+        }
     }
 }
