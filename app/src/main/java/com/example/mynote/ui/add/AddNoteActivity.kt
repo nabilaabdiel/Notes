@@ -6,33 +6,22 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.crocodic.core.api.ApiStatus
-import com.crocodic.core.extension.isEmptyRequired
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.textOf
 import com.crocodic.core.extension.tos
 import com.crocodic.core.helper.DateTimeHelper
 import com.example.mynote.R
 import com.example.mynote.base.activity.BaseActivity
-import com.example.mynote.base.viewModel.BaseViewModel
-import com.example.mynote.data.room.user.Tittle
 import com.example.mynote.databinding.ActivityAddNoteBinding
 import com.example.mynote.ui.home.HomeActivity
-import com.example.mynote.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.lang.String.format
 import java.text.SimpleDateFormat
 
 @AndroidEntryPoint
 class AddNoteActivity :
     BaseActivity<ActivityAddNoteBinding, AddNoteViewModel>(R.layout.activity_add_note) {
 
-//    private var note: Tittle? = null
-//    private var upTitle: String? = null
-//    private var idNote: String? = null
-//    private var upContent: String? = null
-
-    //delete
     private var id: String? = null
     private var title: String? = null
     private var content: String? = null
@@ -42,11 +31,6 @@ class AddNoteActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        idNote = intent.getStringExtra("id")
-//        upTitle = intent.getStringExtra("title")
-//        upContent = intent.getStringExtra("content")
-
-        //delete
         id = intent.getStringExtra("id")
         title = intent.getStringExtra("title")
         content = intent.getStringExtra("content")
@@ -65,11 +49,7 @@ class AddNoteActivity :
 
         binding.ivAddBack.setOnClickListener {
             openActivity<HomeActivity>()
-//
-//            val tittle = binding.etaddTittle.textOf()
-//            val content = binding.etaddContent.textOf()
-//
-//            viewModel.createNote(tittle, content)
+
         }
         binding.ivSave.setOnClickListener {
 
@@ -89,7 +69,6 @@ class AddNoteActivity :
             }
         }
 
-        //delete
         binding.ivDelete.setOnClickListener {
             if (id != null) {
                 viewModel.deleteNote(id!!)
@@ -98,7 +77,6 @@ class AddNoteActivity :
             }
         }
 
-        //update date
         val text: TextView = findViewById(R.id.edited)
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
         val dateString =

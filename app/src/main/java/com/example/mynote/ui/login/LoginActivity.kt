@@ -5,7 +5,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.crocodic.core.api.ApiStatus
-import com.crocodic.core.data.CoreSession
 import com.crocodic.core.extension.base64encrypt
 import com.crocodic.core.extension.isEmptyRequired
 import com.crocodic.core.extension.openActivity
@@ -20,13 +19,9 @@ import com.example.mynote.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
-
-//    @Inject
-//    lateinit var session: CoreSession
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +34,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
         binding.btnLogin.setOnClickListener {
             if (binding.etlEmail.isEmptyRequired(R.string.label_must_fill) ||
-                binding.etlPassword.isEmptyRequired(R.string.label_must_fill)){
+                binding.etlPassword.isEmptyRequired(R.string.label_must_fill)
+            ) {
                 return@setOnClickListener
             }
 
@@ -69,11 +65,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             }
         }
     }
+
     private fun tokenApi() {
         val dateNow = DateTimeHelper().dateNow()
         val tokenInit = "$dateNow|rahasia"
         val tokenEncrypt = tokenInit.base64encrypt()
-        session.setValue(Const.TOKEN.API_TOKEN,tokenEncrypt)
+        session.setValue(Const.TOKEN.API_TOKEN, tokenEncrypt)
         Timber.d("cek token : $tokenInit")
 
         lifecycleScope.launch {

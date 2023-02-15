@@ -15,7 +15,4 @@ interface UserDao: CoreDao <User> {
 
     @Query("SELECT EXISTS (SELECT 1 FROM User WHERE idRoom = 1)")
     suspend fun isLogin(): Boolean
-
-    //Channel untuk yang private, sementara yang bisa di akses dari luar adalah Flow/asFlow
-    // Flow/Channel itu menggantikan LiveData
 }

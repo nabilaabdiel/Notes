@@ -23,7 +23,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginTop="55dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="My Notes"
+            android:text="@string/My_notes"
             android:textColor="@color/white"
             android:textSize="26sp" />
 
@@ -36,7 +36,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/poppinsregular"
             android:gravity="top"
-            android:text="Please login with your email and password"
+            android:text="@string/Please_login_with_your_email_and_password"
             android:textColor="@color/white"
             android:textSize="14sp"/>
 
@@ -47,7 +47,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="275dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Email"
+            android:text="@string/Email"
             android:textColor="@color/blues"
             android:textSize="13sp" />
 
@@ -63,7 +63,7 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/custom_bg"
             android:fontFamily="@font/poppinsregular"
-            android:hint="Enter your email ..."
+            android:hint="@string/Enter_your_email"
             android:inputType="textEmailAddress"
             android:padding="12dp"
             android:textSize="15sp" />
@@ -76,7 +76,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="23dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Password"
+            android:text="@string/Password"
             android:textColor="@color/blues"
             android:textSize="13sp" />
 
@@ -101,7 +101,7 @@
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/custom_bg"
                 android:fontFamily="@font/poppinsregular"
-                android:hint="Enter your password ..."
+                android:hint="@string/Enter_your_password"
                 android:inputType="textPassword"
                 android:padding="12dp"
                 android:textSize="15sp" />
@@ -117,7 +117,7 @@
             android:textColor="@color/white"
             android:background="@drawable/custom_bg1"
             android:fontFamily="@font/poppinsregular"
-            android:text="Login"
+            android:text="@string/Login"
             android:textAllCaps="false" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -129,7 +129,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/custom_bg2"
             android:fontFamily="@font/poppinsregular"
-            android:text="Register"
+            android:text="@string/Register"
             android:textAllCaps="false"
             android:textColor="@color/grey" />
 

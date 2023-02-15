@@ -12,7 +12,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -28,7 +27,6 @@ import com.crocodic.core.helper.DateTimeHelper
 import com.example.mynote.R
 import com.example.mynote.base.activity.BaseActivity
 import com.example.mynote.databinding.ActivityEditProfileBinding
-import com.example.mynote.ui.fragment.fragmentprofile.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.io.File
@@ -41,7 +39,6 @@ import java.io.InputStream
 class EditProfileActivity :
     BaseActivity<ActivityEditProfileBinding, EditViewModel>(R.layout.activity_edit_profile) {
 
-    //picture
     private var photoFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,20 +107,6 @@ class EditProfileActivity :
         }
     }
 
-    /*    fun onClickEdtProfile(v: View?) {
-            when (v) {
-    //            binding.ivEditProfileClose -> onBackPressed()
-    //            binding.ivEditProfileUpdate -> validateForm()
-                binding.edtProfile -> {
-                    if (checkPermissionGallery()) {
-                        openGallery()
-                    } else {
-                        requestPermissionGallery()
-                    }
-                }
-            }
-            super.onClick(v)
-        }*/
     private var activityLauncherGallery =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             result.data?.data?.let {
@@ -167,7 +150,6 @@ class EditProfileActivity :
             val file = if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
                 createImageFile()
             } else {
-                //File("${Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)}" + File.separator + "BurgerBangor", getNewFileName())
                 File(externalCacheDir?.absolutePath, getNewFileName())
             }
 
@@ -256,11 +238,8 @@ class EditProfileActivity :
     }
 
     private fun getAppSpecificAlbumStorageDir(albumName: String, subAlbumName: String): File {
-        // Get the pictures directory that's inside the app-specific directory on
-        // external storage.
         val file = File(getExternalFilesDir(albumName), subAlbumName)
         if (!file.mkdirs()) {
-            //Log.e("fssfsf", "Directory not created")
         }
         return file
     }

@@ -4,16 +4,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.widget.SearchView
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.extension.openActivity
 import com.example.mynote.R
@@ -27,11 +21,6 @@ import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
-    //Refresh
-    lateinit var swipeRefreshLayout: SwipeRefreshLayout
-    lateinit var recyclerView: RecyclerView
-
-    //search-end
     private var keyword: String? = null
 
     private val runnable by lazy {
@@ -40,9 +29,7 @@ class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
     private val handler = Handler(Looper.getMainLooper())
-    //end
 
-    //List
     private val notes = ArrayList<Tittle?>()
 
     private val viewModel by activityViewModels<HomeViewModel>()
@@ -53,9 +40,8 @@ class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
         iniSwipe()
 
         observe()
-        //List
         binding?.rvHome?.adapter = CoreListAdapter<ListItemBinding, Tittle>(R.layout.list_item)
-            .initItem(notes) {position, data ->
+            .initItem(notes) { position, data ->
                 activity?.openActivity<AddNoteActivity> {
                     putExtra("id", data?.id)
                     putExtra("title", data?.tittle)
@@ -65,7 +51,6 @@ class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 }
             }
 
-        //Search-end
         binding?.svHome?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return true
@@ -87,20 +72,12 @@ class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 return true
             }
         })
-        //end
-
-//        override fun onQueryTextSubmit(query: String?): Boolean {
-//            //kalo kita mau search ketika dienter
-//        }
-//        override fun onQueryTextChange(query: String): Boolean {
-//            //kalo kita mau lakukan search tiap diketik
-//        }
 
         viewModel.getNote(keyword)
 
     }
 
-    private fun observe(){
+    private fun observe() {
         lifecycleScope.launch {
             viewModel.dataNote.observe(requireActivity()) {
                 notes.clear()
@@ -117,20 +94,3 @@ class HomeFragment : Fragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 }
-
-//    @Inject
-//    lateinit var userDao: UserDao
-//    private var friend = ArrayList<User>()
-//    private var keyword: String? = null
-//
-//    private val runnable by lazy {
-//        Runnable {
-//            refreshData()
-//        }
-//    }
-//
-//    private val adapter by lazy {
-//        ReactiveListAdapter<, User>(R.layout.item_friend)
-//    }
-
-//        Timber.d("cek")

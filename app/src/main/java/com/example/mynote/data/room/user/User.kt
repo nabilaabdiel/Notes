@@ -23,11 +23,5 @@ data class User(
     @Expose
     @SerializedName("photo")
     val photo: String?
-//    @Expose
-//    @SerializedName("password")
-//    val password: String?,
-//    @Expose
-//    @SerializedName("comfirmPassword")
-//    val confirmPassword: String?
 
 )

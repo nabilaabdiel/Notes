@@ -74,7 +74,6 @@ class DataModule {
         return okHttpClient.build()
     }
 
-    //Note: add base url
     @Provides
     fun provideApiService(okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()

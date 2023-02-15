@@ -1,7 +1,6 @@
 package com.example.mynote.ui.home
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.crocodic.core.extension.openActivity
 import com.example.mynote.R
@@ -10,13 +9,10 @@ import com.example.mynote.databinding.ActivityHomeBinding
 import com.example.mynote.ui.add.AddNoteActivity
 import com.example.mynote.ui.fragment.fragmenthome.HomeFragment
 import com.example.mynote.ui.fragment.fragmentprofile.ProfileFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.activity_home) {
-
-//    private lateinit var navigation : BottomNavigationView
 
     private val homeFragment = HomeFragment()
     private val profileFragment = ProfileFragment()
@@ -24,8 +20,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        navigation = findViewById(R.id.navigation)
-        binding.navigation.setBackground(null)
+        binding.navigation.background = null
 
         binding.fabHome.setOnClickListener {
             openActivity<AddNoteActivity>()

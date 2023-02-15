@@ -8,7 +8,6 @@ import com.example.mynote.base.viewModel.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -47,7 +46,6 @@ class AddNoteViewModel @Inject constructor(
             })
     }
 
-    //delete
     fun deleteNote(id: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
         ApiObserver({ apiService.deleteNote(id) }, false, object : ApiObserver.ResponseListener {

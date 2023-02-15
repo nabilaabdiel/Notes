@@ -28,7 +28,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/transparant"
-                android:paddingEnd="@dimen/_12sdp"
                 app:itemIconTint="@drawable/state_selector"
                 app:itemTextColor="@drawable/state_selector"
                 app:menu="@menu/btm_menu"/>

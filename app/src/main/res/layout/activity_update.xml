@@ -49,7 +49,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingHorizontal="27dp">
 
@@ -60,7 +60,7 @@
                     android:layout_marginTop="35dp"
                     android:background="@color/transparant"
                     android:fontFamily="@font/poppinsmedium"
-                    android:hint="Tittle"
+                    android:hint="@string/Tittle"
                     android:orientation="vertical"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
@@ -72,7 +72,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@color/transparant"
                     android:fontFamily="@font/poppinsmedium"
-                    android:hint="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
+                    android:hint="@string/Lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s_when_an_unknown_printer_took_a_galley"
                     android:orientation="vertical"
                     android:textSize="16sp" />
 
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="728dp"
                     android:layout_marginBottom="52dp"
-                    android:text="Edited at 22.27"
+                    android:text="@string/Edited_at_22_27"
                     android:textAlignment="center"
                     android:textSize="12sp" />
 

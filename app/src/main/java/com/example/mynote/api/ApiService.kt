@@ -61,6 +61,4 @@ interface ApiService {
     @GET("user/get-token")
     suspend fun getToken(): String
 
-    @GET("token/renew")
-    suspend fun getRenewToken(): String
 }
