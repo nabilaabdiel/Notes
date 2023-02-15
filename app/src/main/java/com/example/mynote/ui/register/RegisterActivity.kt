@@ -1,15 +1,14 @@
 package com.example.mynote.ui.register
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.data.CoreSession
-import com.crocodic.core.extension.base64encrypt
-import com.crocodic.core.extension.isEmptyRequired
-import com.crocodic.core.extension.openActivity
-import com.crocodic.core.extension.textOf
+import com.crocodic.core.extension.*
 import com.crocodic.core.helper.DateTimeHelper
 import com.example.mynote.R
 import com.example.mynote.base.activity.BaseActivity
@@ -31,6 +30,20 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initClick()
+
+        observe()
+
+    }
+
+    private fun initClick() {
+        //tos("Back View: $back")
+
+        binding.btnBack.setOnClickListener{
+            onBackPressed()
+//            tos("test")
+        }
+
         binding.btnSave.setOnClickListener {
             if (binding.etrName.isEmptyRequired(R.string.label_must_fill) ||
                 binding.etrEmail.isEmptyRequired(R.string.label_must_fill) ||
@@ -46,13 +59,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
 
             viewModel.register(name, email, password, confirm)
         }
+    }
 
+    private fun observe() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.apiResponse.collect {
                         when (it.status) {
-                            ApiStatus.LOADING -> loadingDialog.show("Loggin in...")
+                            ApiStatus.LOADING -> loadingDialog.show("Please wait")
                             ApiStatus.SUCCESS -> {
                                 loadingDialog.dismiss()
                                 openActivity<HomeActivity>()
@@ -63,10 +78,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
                     }
                 }
             }
-        }
-        binding.backRegister.setOnClickListener {
-            openActivity<LoginActivity>()
-            finish()
         }
     }
 }

@@ -42,9 +42,10 @@ interface ApiService {
     ): String
 
     @FormUrlEncoded
-    @PATCH("note/:id")
+    @PATCH("note/{id}")
     suspend fun updateNote(
-        @Field("tittle") title: String,
+        @Path("id") id: String?,
+        @Field("title") title: String?,
         @Field("content") content: String?
     ): String
 

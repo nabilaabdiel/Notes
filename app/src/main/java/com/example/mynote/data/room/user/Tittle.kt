@@ -1,10 +1,13 @@
 package com.example.mynote.data.room.user
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity
 data class Tittle(
     @PrimaryKey()
@@ -22,5 +25,12 @@ data class Tittle(
     val date : String,
     @Expose
     @SerializedName("id_room")
-    val idRoom : String
-)
+    val idRoom : String,
+    @Expose
+    @SerializedName("created_At")
+    val created_At : Long,
+    @Expose
+    @SerializedName("updated_At")
+    val updated_At : Long
+
+) : Parcelable

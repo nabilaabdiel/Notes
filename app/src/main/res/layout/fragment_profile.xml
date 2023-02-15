@@ -56,6 +56,12 @@
             android:orientation="horizontal"
             android:layout_marginHorizontal="24dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/tvp_profile"
                 android:layout_width="wrap_content"

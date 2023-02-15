@@ -28,9 +28,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.navigation.setBackground(null)
 
         binding.fabHome.setOnClickListener {
-            openActivity<AddNoteActivity>() {
-                finish()
-            }
+            openActivity<AddNoteActivity>()
         }
         replesFragment(homeFragment)
 

@@ -18,7 +18,6 @@ class ProfileViewModel @Inject constructor(private val apiService: ApiService, p
     private val _user = Channel<List<User>>()
     val user = _user.receiveAsFlow()
 
-
     val getUser = userDao.getUser()
 
     fun logout (logout: ()-> Unit) = viewModelScope.launch {
